@@ -1,38 +1,154 @@
+@import url('https://fonts.googleapis.com/css2?family=Kalam:wght@400;700&display=swap');
+
 .App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+  width: 100vw;
+  height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  font-family: "Kalam", cursive;
+  background-image: url('./images/joe-woods-4Zaq5xY5M_c-unsplash.jpg');
+  background-size: cover;
+}
+
+.heading {
+  font-size: 40px;
+  margin: 30px 0;
+  color: darkslategrey;
+  font-weight: 600;
+  z-index: 1;
+  text-align: center;
+}
+.input {
+  display: flex;
+  width: 60%;
+  position: relative;
+  align-items: center;
+}
+
+.input__box {
+  width: 100%;
+  border-radius: 50px;
+  padding: 17px 30px;
+  font-family: inherit;
+  font-size: 25px;
+  border: none;
+  transition: 0.2s;
+  box-shadow: inset 0 0 5px black;
+}
+
+.input__box:focus {
+  box-shadow: 0 0 10px 1000px rgba(0, 0, 0, 0.3);
+  outline: none;
+}
+
+.input_submit {
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  margin: 12px;
+  border-radius: 50px;
+  right: 0px;
+  border: none;
+  font-size: 15px;
+  background-color: slategray;
   color: white;
+  transition: 0.2s all;
+  box-shadow: 0 0 10px black;
 }
 
-.App-link {
-  color: #61dafb;
+.input_submit:hover {
+  background-color: rgb(138, 166, 195);
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.input_submit:active {
+  transform: scale(0.8);
+  box-shadow: 0 0 5px black;
+}
+
+.todos {
+  display: flex;
+  justify-content: space-evenly;
+  width: 60%;
+  flex-wrap: wrap;
+}
+
+.todos__single {
+  display: flex;
+  position: relative;
+  text-orientation: sideways-right;
+  width: 42%;
+  border-radius: 8px;
+  padding: 10px;
+  margin-top: 15px;
+  background-image: url('./images/j-lee-PgqsTarkZDw-unsplash.jpg');
+}
+
+.todos__single--text {
+  border-radius: 8px;
+  width: calc(100% - 110px);
+  font-family: inherit;
+  padding: 5px;
+  border: none;
+  font-size: 20px;
+}
+
+.todos__single--text:focus {
+  background-color: rgba(122, 78, 78, 0.08);
+  outline: none;
+}
+.iconContainer{
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-40%);
+}
+.icon {
+  margin-left: 10px;
+  font-size: 25px;
+  cursor: pointer;
+}
+.credit{
+  position: absolute;
+  bottom: 10px;
+  color: rgb(27, 22, 22);
+}
+
+@media (max-width: 1200px) {
+  .todos__single {
+    width: 40%;
   }
-  to {
-    transform: rotate(360deg);
+
+}
+
+@media (max-width: 700px) {
+  .input {
+    width: 70%;
+  }
+  .input__box {
+      padding: 10px 30px;
+  }
+  .input_submit {
+    
+    width: 50px;
+    height: 37px;
+    border-radius: 17px;
+  }
+  .icon{
+    font-size: 20px;
+  }
+
+  .todos {
+    width: 80%;
+  }
+  .todos__single {
+    width: 100%;
+  }
+}
+
+@media (max-width: 800px) {
+  .heading {
+    margin: 15px 0;
+    font-size: 35px;
   }
 }
